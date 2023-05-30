@@ -1,0 +1,39 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Random Array API",
+    "description": "API to generate a random 500-dimensional array of floats",
+    "version": "1.0"
+  },
+  "paths": {
+    "/random_array": {
+      "post": {
+        "tags": ["Random Array"],
+        "summary": "Generate a random 500-dimensional array of floats",
+        "parameters": [
+          {
+            "name": "sentence",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Input sentence"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Random 500-dimensional array of floats",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  }
+}
